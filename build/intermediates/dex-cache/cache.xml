@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\twt\.gradle\caches\modules-2\files-2.1\org.greenrobot\eventbus\3.0.0\ddd99896e9569eaababbe81b35d80e1b91c4ad85\eventbus-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="ddd99896e9569eaababbe81b35d80e1b91c4ad85">
+        <dex dex="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\pre-dexed\debug\eventbus-3.0.0_e022339f7d072b5cba554f4e0b9cfedd4666568e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\libs\Msc.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="355ee52884a2192e9102c3374e425e9b2cc1cad7">
+        <dex dex="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\pre-dexed\debug\Msc_49ecd7259fc47c3148a3aa173027f426f93513ab.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.3.1_16184c55aadb900bb0b849126f48f8fc8b966dc0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\twt\.gradle\caches\modules-2\files-2.1\de.greenrobot\eventbus\2.4.0\ddd166d01b3158d1c00576d29f7ed15c030df719\eventbus-2.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="ddd166d01b3158d1c00576d29f7ed15c030df719">
+        <dex dex="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\pre-dexed\debug\eventbus-2.4.0_cfc7952f2084443b0ceb19b1dc5b6df885b4e303.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.3.1_83e2c45f8d9fd5471bf8c2be34e06ece82984fcf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\libs\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="ab78ed461deab5206c4cac6bbcf60e6d963cfd85">
+        <dex dex="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\pre-dexed\debug\classes_7c2003a370e8d55e863922c8b400ff6362dd3951.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.3.1_2c20ab0950edc7e6f4d24af3945d254de0cb2775.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_4587515df70b11ae990e217c69c9b3a61733a049.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.3.1_a2a65acf1035736849cd14306602fae86e5d6e38.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\libs\glide-3.7.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\pre-dexed\debug\glide-3.7.0_1b149ed45ad11ab7243ce7c57770f71b83b8107b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.3.1_e6817f77297c5a99c12fc0ff56b7567898e142e3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\twt\.gradle\caches\modules-2\files-2.1\com.nostra13.universalimageloader\universal-image-loader\1.9.4\dd9eeb557650c4ad7394df23f0f5cf27a7cfc697\universal-image-loader-1.9.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="dd9eeb557650c4ad7394df23f0f5cf27a7cfc697">
+        <dex dex="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.4_6bb18cacd12204922028bc7c85457d3d94686787.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\libs\picasso-2.5.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_93bca72f8387bff2dc0e70d57caef37562fe1aab.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\libs\Sunflower.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="5f3a1c2ed733bf036d294905dcb2b78d6eca5f2c">
+        <dex dex="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\pre-dexed\debug\Sunflower_68fc2b6bf4e0d2dbfdbdb136e3882ae6188a0263.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.3.1_390c3e1f1c02d39d744db54da2f8223e09d60949.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\libs\gson-2.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="42a24d508f5e05bd22cc42bd2e2babd7b5466ec9">
+        <dex dex="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\pre-dexed\debug\gson-2.2.1_d929d992333bbd6b3c3f6f0253f308ab3604e940.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.3.1_68a080e2725d1bfd40311c15d44d9f151158a1e6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\exploded-aar\MobilePlayer\vitamio\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="d9adca53045e913ba64b87dd9e3368e9a97fa86f">
+        <dex dex="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\pre-dexed\debug\MobilePlayer-vitamio-unspecified_b2a4373724e3d1525aa5eb7a53ee38dcf9f796c8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\exploded-aar\MobilePlayer\jcvideoplayer-lib\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="d6f8e9d22c7639a4502480e5e96521fda61bc7eb">
+        <dex dex="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\pre-dexed\debug\MobilePlayer-jcvideoplayer-lib-unspecified_09f4f489e7978418bbad3dd542bb5592b0cfbd1a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.3.1_27aaa44c73562b8e7df2ffc37cbd0b7102d3f7e1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.3.1_61a908c1746f2a717f77440e021e1c37aaca3966.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\exploded-aar\MobilePlayer\xutils\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="92ce4d9d9c7423cfb2c34b6bd6fb3dfbdff84b2d">
+        <dex dex="D:\AndroidStudioProjects\AndroidStudioProjects\MobilePlayer\app\build\intermediates\pre-dexed\debug\MobilePlayer-xutils-unspecified_5d0cf7f2b57c12f335bdf1715341239d3de6eb2c.jar" />
+    </item>
+
+</items>

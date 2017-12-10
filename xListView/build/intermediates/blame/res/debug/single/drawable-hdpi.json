@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\AndroidStudioProjects\\AndroidStudioProjects\\MobilePlayer\\xListView\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_launcher.png",
+        "source": "D:\\AndroidStudioProjects\\AndroidStudioProjects\\MobilePlayer\\xListView\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\AndroidStudioProjects\\MobilePlayer\\xListView\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\xlistview_arrow.png",
+        "source": "D:\\AndroidStudioProjects\\AndroidStudioProjects\\MobilePlayer\\xListView\\src\\main\\res\\drawable-hdpi\\xlistview_arrow.png"
+    }
+]
