@@ -27,7 +27,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class MusicPlayerService extends Service {
-    public static final String OPENAUDIO = "com.atguigu.mobileplayer_OPENAUDIO";
+    public static final String OPENAUDIO = "com.twt.mobileplayer_OPENAUDIO";
     private int position;
     private ArrayList<MediaItem> mediaItems;
     private ArrayList<LrcContent> lrcList;
@@ -211,7 +211,7 @@ public class MusicPlayerService extends Service {
         PendingIntent pendingIntent = PendingIntent.getActivity(this,1,intent,PendingIntent.FLAG_UPDATE_CURRENT);
         Notification notification = new Notification.Builder(this)
                 .setSmallIcon(R.drawable.notification_music_playing)
-                .setContentTitle("321音乐")
+                .setContentTitle("小熊音乐")
                 .setContentText("正在播放:"+getName())
                 .setContentIntent(pendingIntent)
                 .build();

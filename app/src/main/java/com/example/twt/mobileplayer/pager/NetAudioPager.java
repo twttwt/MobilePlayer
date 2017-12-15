@@ -2,6 +2,7 @@ package com.example.twt.mobileplayer.pager;
 
 import android.app.Activity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -22,7 +23,7 @@ import org.xutils.x;
 
 import java.util.List;
 
-
+import static android.content.ContentValues.TAG;
 
 
 /**
@@ -34,7 +35,7 @@ import java.util.List;
  */
 
 public class NetAudioPager extends BasePager {
-
+    private static final String TAG = "NetAudioPager";
     private Activity mActivity;
     private ListView mListView;
 
@@ -80,6 +81,7 @@ public class NetAudioPager extends BasePager {
         if(!TextUtils.isEmpty(savaJson)){
             //解析数据
             processData(savaJson);
+            Log.d(TAG, "initData: "+savaJson);
         }
         //联网
         if(!isInitData) {
@@ -93,7 +95,7 @@ public class NetAudioPager extends BasePager {
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
-                LogUtil.e("请求数据成功==" + result);
+                LogUtil.e("请求数据成功==" );
                 //保持数据
                 CacheUtil.setString(mContext, Constants.ALL_RES_URL, result);
                 processData(result);

@@ -1,5 +1,9 @@
 [
     {
+        "merged": "G:\\TwtProhect\\MobilePlayer\\vitamio\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\ic_launcher.png",
+        "source": "G:\\TwtProhect\\MobilePlayer\\vitamio\\res\\drawable-ldpi\\ic_launcher.png"
+    },
+    {
         "merged": "D:\\AndroidStudioProjects\\AndroidStudioProjects\\MobilePlayer\\vitamio\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\ic_launcher.png",
         "source": "D:\\AndroidStudioProjects\\AndroidStudioProjects\\MobilePlayer\\vitamio\\res\\drawable-ldpi\\ic_launcher.png"
     }

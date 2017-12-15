@@ -34,6 +34,10 @@ public class LrcUtil {
 
         try {
             File file=new File(path.replace(".mp3", ".lrc"));
+            if (!file.exists()){
+                return;
+            }
+
             FileInputStream  fis = new FileInputStream(file);
             InputStreamReader reader=new InputStreamReader(fis);
             BufferedReader br=new BufferedReader(reader);

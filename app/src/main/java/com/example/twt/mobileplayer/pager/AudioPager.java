@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -37,20 +38,22 @@ public class AudioPager extends BasePager {
     private static final String TAG = "AudioPager";
     private Activity mActivity;
     private ListView mListView;
-    private TextView mTv_nomedia;
-    private ProgressBar mPb_loading;
+    private TextView mTvnomedia;
+    private ProgressBar mPbloading;
     private List<MediaItem> mMediaItemList;
     private Handler mHandler=new Handler(){
         @Override
         public void handleMessage(Message msg) {
-            super.handleMessage(msg);
+
             if (mMediaItemList!=null&&mMediaItemList.size()>0){
                 mListView.setAdapter(new VideoPagerAdapter(mMediaItemList,mActivity,true));
                 mListView.setOnItemClickListener(new MyOnItemClickListener());
-                mPb_loading.setVisibility(View.GONE);
+                mTvnomedia.setVisibility(View.GONE);
+                mPbloading.setVisibility(View.GONE);
             }else {
-                mPb_loading.setVisibility(View.GONE);
-                mTv_nomedia.setText("没有搜索到本地音乐");
+                mPbloading.setVisibility(View.GONE);
+                mTvnomedia.setVisibility(View.VISIBLE);
+                mTvnomedia.setText("没有搜索到本地音乐");
             }
 
         }
@@ -65,8 +68,8 @@ public class AudioPager extends BasePager {
     public View initView() {
        View view=View.inflate(mActivity, R.layout.video_pager,null);
         mListView = (ListView) view.findViewById(R.id.listview);
-        mTv_nomedia = (TextView) view.findViewById(R.id.tv_nomedia);
-        mPb_loading = (ProgressBar) view.findViewById(R.id.pb_loading);
+        mTvnomedia = (TextView) view.findViewById(R.id.tv_nomedia);
+        mPbloading = (ProgressBar) view.findViewById(R.id.pb_loading);
         if (isInitData){
             mHandler.sendEmptyMessage(0);
         }
@@ -120,6 +123,7 @@ public class AudioPager extends BasePager {
             Intent intent=new Intent(mActivity, AudioPlayerActivity.class);
             intent.putExtra("position",position);
             startActivity(intent);
+
         }
     }
 }

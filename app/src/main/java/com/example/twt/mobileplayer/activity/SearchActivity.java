@@ -77,6 +77,8 @@ public class SearchActivity extends Activity {
     class MyOnClickListener implements View.OnClickListener {
 
         @Override
+
+
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.iv_voice://语音输入

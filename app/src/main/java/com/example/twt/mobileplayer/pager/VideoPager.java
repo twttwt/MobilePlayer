@@ -60,6 +60,7 @@ public class VideoPager extends BasePager {
                     mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            mTv_nomedia.setVisibility(View.GONE);
                             MediaItem mediaItem = mMediaItemList.get(position);
 
                             //1.调起系统所有的播放-隐式意图

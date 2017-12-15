@@ -7,7 +7,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
@@ -15,6 +22,8 @@ import android.os.Message;
 import android.os.RemoteException;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
@@ -26,8 +35,12 @@ import com.example.twt.mobileplayer.R;
 import com.example.twt.mobileplayer.domain.MediaItem;
 import com.example.twt.mobileplayer.service.MusicPlayerService;
 import com.example.twt.mobileplayer.utils.CacheUtil;
+import com.example.twt.mobileplayer.utils.DisplayUtil;
+import com.example.twt.mobileplayer.utils.FastBlurUtil;
 import com.example.twt.mobileplayer.utils.LrcUtil;
 import com.example.twt.mobileplayer.utils.Utils;
+import com.example.twt.mobileplayer.view.BackgourndAnimationRelativeLayout;
+import com.example.twt.mobileplayer.view.DiscView;
 import com.example.twt.mobileplayer.view.LrcView;
 
 import org.greenrobot.eventbus.EventBus;
@@ -39,6 +52,9 @@ import static com.example.twt.mobileplayer.service.MusicPlayerService.REPEAT_ALL
 import static com.example.twt.mobileplayer.service.MusicPlayerService.REPEAT_NORMAL;
 import static com.example.twt.mobileplayer.service.MusicPlayerService.REPEAT_SINGLE;
 
+/**
+ * @author twt
+ */
 public class AudioPlayerActivity extends Activity implements View.OnClickListener{
     private static final String TAG = "AudioPlayerActivity";
     private static final int SHOW_LYRIC = 1;
@@ -53,15 +69,15 @@ public class AudioPlayerActivity extends Activity implements View.OnClickListene
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             switch (msg.what){
-                case SHOW_LYRIC://显示歌词
+                //显示歌词
+                 case SHOW_LYRIC:
 
                     //1.得到当前的进度
                     try {
                         int currentPosition = service.getCurrentPosition();
-                       // Log.d(TAG, "handleMessage: "+currentPosition);
+
 
                         //2.把进度传入ShowLyricView控件，并且计算该高亮哪一句
-
                         lrcview.setshowNextLyric(currentPosition,service.getDuration());
                         //3.实时的发消息
                         mHandler.removeMessages(SHOW_LYRIC);
@@ -78,6 +94,12 @@ public class AudioPlayerActivity extends Activity implements View.OnClickListene
                         int currentPosition = service.getCurrentPosition();
 
                         seekbarAudio.setProgress(currentPosition);
+
+                        //3.时间进度跟新
+                        tvTime.setText(mUtils.stringForTime(currentPosition)+"/"+mUtils.stringForTime(service.getDuration()));
+                        if (currentPosition>=service.getDuration()&&service.getPlayMode()!=REPEAT_SINGLE){
+                            btnAudioStartPause.setBackgroundResource(R.drawable.btn_audio_start_selector);
+                        }
                     } catch (RemoteException e) {
                         e.printStackTrace();
                     }
@@ -85,6 +107,9 @@ public class AudioPlayerActivity extends Activity implements View.OnClickListene
 
                     mHandler.removeMessages(PROGRESS);
                     mHandler.sendEmptyMessageDelayed(PROGRESS,1000);
+                    break;
+                default:
+                    break;
 
             }
 
@@ -108,7 +133,7 @@ public class AudioPlayerActivity extends Activity implements View.OnClickListene
             if(service != null){
                 try {
                     if (isNotifl){
-                       showViewData();
+                        showViewData();
                     }else {
                         service.openAudio(mPosition);
                     }
@@ -140,6 +165,7 @@ public class AudioPlayerActivity extends Activity implements View.OnClickListene
     private boolean isNotifl;
     private int playmode;
     private LrcView lrcview;
+    private BackgourndAnimationRelativeLayout rootLayout;
 
 
     @Override
@@ -147,28 +173,49 @@ public class AudioPlayerActivity extends Activity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_audio_player);
         findViews();
+
         getData();
         setListener();
-       bindAndStartService();
+        bindAndStartService();
         receiverBroadcast();
+        makeStatusBarTransparent();
     }
 
+    //设置透明状态栏
+    private void makeStatusBarTransparent() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.TRANSPARENT);
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        }
+    }
     private void receiverBroadcast() {
         IntentFilter filter=new IntentFilter();
         filter.addAction(MusicPlayerService.OPENAUDIO);
         receiver = new Myreceiver();
         registerReceiver(receiver,filter);
     }
+
+
+
+
+
+
     class Myreceiver extends BroadcastReceiver{
 
         @Override
         public void onReceive(Context context, Intent intent) {
-             showData(null);
-           // showLyric();
-           // showViewData();
+            showData(null);
+            // showLyric();
+            // showViewData();
         }
     }
-   //3.订阅方法
+    //3.订阅方法
     @Subscribe(threadMode = ThreadMode.MAIN,sticky = false,priority = 0)
     public void showData(MediaItem mediaItem) {
 
@@ -178,20 +225,24 @@ public class AudioPlayerActivity extends Activity implements View.OnClickListene
 
     }
 
-    private void showLyric() {
+    private void
+
+
+    showLyric() {
         LrcUtil lrcUtil=new LrcUtil();
 
         try {
+
             String path=service.getAudioPath();
             lrcUtil.readFile(path);
-          //  lrcview.setIndex(service.lrcIndex());
+
             lrcview.setMlrclist(lrcUtil.getLrcList());
 
         } catch (RemoteException e) {
             e.printStackTrace();
         }
 
-            mHandler.sendEmptyMessage(SHOW_LYRIC);
+        mHandler.sendEmptyMessage(SHOW_LYRIC);
 
     }
 
@@ -213,7 +264,8 @@ public class AudioPlayerActivity extends Activity implements View.OnClickListene
         Intent intent = new Intent(this, MusicPlayerService.class);
         intent.setAction("com.twt.mobileplayer_OPENAUDIO");
         bindService(intent, conn, Context.BIND_AUTO_CREATE);
-        startService(intent);//不至于实例化多个服务
+        //不至于实例化多个服务
+        startService(intent);
     }
 
     private void setListener() {
@@ -273,6 +325,8 @@ public class AudioPlayerActivity extends Activity implements View.OnClickListene
     private Button btnAudioStartPause;
     private Button btnAudioNext;
     private Button btnLyrc;
+    private DiscView mDisc;
+
 
     /**
      * Find the Views in the layout<br />
@@ -281,6 +335,7 @@ public class AudioPlayerActivity extends Activity implements View.OnClickListene
      * (http://www.buzzingandroid.com/tools/android-layout-finder)
      */
     private void findViews() {
+        mDisc = (DiscView) findViewById(R.id.discview);
         lrcview=(LrcView) findViewById(R.id.lrcview);
         ivIcon = (ImageView)findViewById( R.id.iv_icon );
         tvArtist = (TextView)findViewById( R.id.tv_artist );
@@ -292,6 +347,8 @@ public class AudioPlayerActivity extends Activity implements View.OnClickListene
         btnAudioStartPause = (Button)findViewById( R.id.btn_audio_start_pause );
         btnAudioNext = (Button)findViewById( R.id.btn_audio_next );
         btnLyrc = (Button)findViewById( R.id.btn_lyrc );
+        rootLayout = (BackgourndAnimationRelativeLayout) findViewById(R.id.rootLayout);
+        try2UpdateMusicPicBackground(R.raw.ic_music1);
 
         btnAudioPlaymode.setOnClickListener( this );
         btnAudioPre.setOnClickListener( this );
@@ -299,10 +356,12 @@ public class AudioPlayerActivity extends Activity implements View.OnClickListene
         btnAudioNext.setOnClickListener( this );
         btnLyrc.setOnClickListener( this );
 
+       // mDisc.setMusicDataList(R.raw.ic_music1);
+
         mPlayer = new MediaPlayer();
         mUtils=new Utils();
-        //1.EventBus注册
-        EventBus.getDefault().register(this);//this是当前类
+        //1.EventBus注册//this是当前类
+        EventBus.getDefault().register(this);
     }
 
     /**
@@ -319,15 +378,16 @@ public class AudioPlayerActivity extends Activity implements View.OnClickListene
             changePlaymode();
         } else if ( v == btnAudioPre ) {
             // Handle clicks for btnAudioPre
-            PreAudio();
+            preAudio();
         } else if ( v == btnAudioStartPause ) {
             // Handle clicks for btnAudioStartPause
-            StartAndPause();
+            startAndPause();
         } else if ( v == btnAudioNext ) {
             // Handle clicks for btnAudioNext
-            NextAudio();
+            nextAudio();
         } else if ( v == btnLyrc ) {
             // Handle clicks for btnLyrc
+            showLyric();
         }
     }
     private void setPlaymode(int playmode) {
@@ -365,13 +425,13 @@ public class AudioPlayerActivity extends Activity implements View.OnClickListene
     }
 
 
-    private void StartAndPause() {
+    private void startAndPause() {
         try {
             if (service.isPlaying()){
-               service.pause();
+                service.pause();
                 btnAudioStartPause.setBackgroundResource(R.drawable.btn_audio_start_selector);
             }else {
-               service.start();
+                service.start();
                 btnAudioStartPause.setBackgroundResource(R.drawable.btn_audio_pause_selector);
             }
         } catch (RemoteException e) {
@@ -379,38 +439,117 @@ public class AudioPlayerActivity extends Activity implements View.OnClickListene
         }
     }
 
-    private void PreAudio() {
+    private void preAudio() {
         try {
             service.pre();
             btnAudioStartPause.setBackgroundResource(R.drawable.btn_audio_pause_selector);
+            try2UpdateMusicPicBackground(R.raw.ic_music1);
         } catch (RemoteException e) {
             e.printStackTrace();
         }
 
     }
 
-    private void NextAudio() {
+    private void nextAudio() {
         try {
             service.next();
             btnAudioStartPause.setBackgroundResource(R.drawable.btn_audio_pause_selector);
+            try2UpdateMusicPicBackground(R.raw.ic_music1);
         } catch (RemoteException e) {
             e.printStackTrace();
         }
     }
 
+    /**
+     * 改变音乐播放背景
+     * @param musicPicRes
+     */
+    private void try2UpdateMusicPicBackground(final int musicPicRes) {
+        if (rootLayout.isNeed2UpdateBackground(musicPicRes)) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    final Drawable foregroundDrawable = getForegroundDrawable(musicPicRes);
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            rootLayout.setForeground(foregroundDrawable);
+                            rootLayout.beginAnimation();
+                        }
+                    });
+                }
+            }).start();
+        }
+    }
+
+    private Drawable getForegroundDrawable(int musicPicRes) {
+        /*得到屏幕的宽高比，以便按比例切割图片一部分*/
+        final float widthHeightSize = (float) (DisplayUtil.getScreenWidth(AudioPlayerActivity.this)
+                * 1.0 / DisplayUtil.getScreenHeight(this) * 1.0);
+
+        Bitmap bitmap = getForegroundBitmap(musicPicRes);
+        int cropBitmapWidth = (int) (widthHeightSize * bitmap.getHeight());
+        int cropBitmapWidthX = (int) ((bitmap.getWidth() - cropBitmapWidth) / 2.0);
+
+        /*切割部分图片*/
+        Bitmap cropBitmap = Bitmap.createBitmap(bitmap, cropBitmapWidthX, 0, cropBitmapWidth,
+                bitmap.getHeight());
+        /*缩小图片*/
+        Bitmap scaleBitmap = Bitmap.createScaledBitmap(cropBitmap, bitmap.getWidth() / 50, bitmap
+                .getHeight() / 50, false);
+        /*模糊化*/
+        final Bitmap blurBitmap = FastBlurUtil.doBlur(scaleBitmap, 8, true);
+
+        final Drawable foregroundDrawable = new BitmapDrawable(blurBitmap);
+        /*加入灰色遮罩层，避免图片过亮影响其他控件*/
+        foregroundDrawable.setColorFilter(Color.GRAY, PorterDuff.Mode.MULTIPLY);
+        return foregroundDrawable;
+    }
+
+    private Bitmap getForegroundBitmap(int musicPicRes) {
+        int screenWidth = DisplayUtil.getScreenWidth(this);
+        int screenHeight = DisplayUtil.getScreenHeight(this);
+
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+
+        BitmapFactory.decodeResource(getResources(), musicPicRes, options);
+        int imageWidth = options.outWidth;
+        int imageHeight = options.outHeight;
+
+        if (imageWidth < screenWidth && imageHeight < screenHeight) {
+            return BitmapFactory.decodeResource(getResources(), musicPicRes);
+        }
+
+        int sample = 2;
+        int sampleX = imageWidth / DisplayUtil.getScreenWidth(this);
+        int sampleY = imageHeight / DisplayUtil.getScreenHeight(this);
+
+        if (sampleX > sampleY && sampleY > 1) {
+            sample = sampleX;
+        } else if (sampleY > sampleX && sampleX > 1) {
+            sample = sampleY;
+        }
+
+        options.inJustDecodeBounds = false;
+        options.inSampleSize = sample;
+        options.inPreferredConfig = Bitmap.Config.RGB_565;
+
+        return BitmapFactory.decodeResource(getResources(), musicPicRes, options);
+    }
 
     @Override
     protected void onDestroy() {
-       if (receiver!=null){
+        if (receiver!=null){
             unregisterReceiver(receiver);
             receiver=null;
         }
-        /*if (conn!=null){
+       if (conn!=null){
             unbindService(conn);
             conn=null;
-        }*/
+        }
         //2.EventBus取消注册
-       EventBus.getDefault().unregister(this);
+        EventBus.getDefault().unregister(this);
         mHandler.removeCallbacksAndMessages(null);
         super.onDestroy();
 

@@ -103,6 +103,8 @@ public class NetVideoPager extends BasePager {
 
     }
 
+
+
     private void getDataFromNet() {
         RequestParams params = new RequestParams(Constants.NET_URL);
         x.http().get(params, new Callback.CommonCallback<String>() {

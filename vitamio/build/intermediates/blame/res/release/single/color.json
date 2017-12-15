@@ -1,5 +1,13 @@
 [
     {
+        "merged": "G:\\TwtProhect\\MobilePlayer\\vitamio\\build\\intermediates\\res\\merged\\release\\color\\abc_primary_text_material_dark.xml",
+        "source": "G:\\TwtProhect\\MobilePlayer\\vitamio\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\color\\abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "G:\\TwtProhect\\MobilePlayer\\vitamio\\build\\intermediates\\res\\merged\\release\\color\\abc_primary_text_disable_only_material_light.xml",
+        "source": "G:\\TwtProhect\\MobilePlayer\\vitamio\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\color\\abc_primary_text_disable_only_material_light.xml"
+    },
+    {
         "merged": "D:\\AndroidStudioProjects\\AndroidStudioProjects\\MobilePlayer\\vitamio\\build\\intermediates\\res\\merged\\release\\color\\abc_primary_text_disable_only_material_dark.xml",
         "source": "D:\\AndroidStudioProjects\\AndroidStudioProjects\\MobilePlayer\\vitamio\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
     },
@@ -8,12 +16,36 @@
         "source": "D:\\AndroidStudioProjects\\AndroidStudioProjects\\MobilePlayer\\vitamio\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\color\\abc_primary_text_material_light.xml"
     },
     {
+        "merged": "G:\\TwtProhect\\MobilePlayer\\vitamio\\build\\intermediates\\res\\merged\\release\\color\\abc_primary_text_disable_only_material_dark.xml",
+        "source": "G:\\TwtProhect\\MobilePlayer\\vitamio\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "G:\\TwtProhect\\MobilePlayer\\vitamio\\build\\intermediates\\res\\merged\\release\\color\\switch_thumb_material_light.xml",
+        "source": "G:\\TwtProhect\\MobilePlayer\\vitamio\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\color\\switch_thumb_material_light.xml"
+    },
+    {
         "merged": "D:\\AndroidStudioProjects\\AndroidStudioProjects\\MobilePlayer\\vitamio\\build\\intermediates\\res\\merged\\release\\color\\abc_primary_text_material_dark.xml",
         "source": "D:\\AndroidStudioProjects\\AndroidStudioProjects\\MobilePlayer\\vitamio\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\color\\abc_primary_text_material_dark.xml"
     },
     {
+        "merged": "G:\\TwtProhect\\MobilePlayer\\vitamio\\build\\intermediates\\res\\merged\\release\\color\\abc_secondary_text_material_light.xml",
+        "source": "G:\\TwtProhect\\MobilePlayer\\vitamio\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\color\\abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "G:\\TwtProhect\\MobilePlayer\\vitamio\\build\\intermediates\\res\\merged\\release\\color\\abc_search_url_text.xml",
+        "source": "G:\\TwtProhect\\MobilePlayer\\vitamio\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\color\\abc_search_url_text.xml"
+    },
+    {
+        "merged": "G:\\TwtProhect\\MobilePlayer\\vitamio\\build\\intermediates\\res\\merged\\release\\color\\abc_primary_text_material_light.xml",
+        "source": "G:\\TwtProhect\\MobilePlayer\\vitamio\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\color\\abc_primary_text_material_light.xml"
+    },
+    {
         "merged": "D:\\AndroidStudioProjects\\AndroidStudioProjects\\MobilePlayer\\vitamio\\build\\intermediates\\res\\merged\\release\\color\\abc_secondary_text_material_dark.xml",
         "source": "D:\\AndroidStudioProjects\\AndroidStudioProjects\\MobilePlayer\\vitamio\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\color\\abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "G:\\TwtProhect\\MobilePlayer\\vitamio\\build\\intermediates\\res\\merged\\release\\color\\switch_thumb_material_dark.xml",
+        "source": "G:\\TwtProhect\\MobilePlayer\\vitamio\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\color\\switch_thumb_material_dark.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\AndroidStudioProjects\\MobilePlayer\\vitamio\\build\\intermediates\\res\\merged\\release\\color\\abc_secondary_text_material_light.xml",
@@ -22,6 +54,10 @@
     {
         "merged": "D:\\AndroidStudioProjects\\AndroidStudioProjects\\MobilePlayer\\vitamio\\build\\intermediates\\res\\merged\\release\\color\\abc_primary_text_disable_only_material_light.xml",
         "source": "D:\\AndroidStudioProjects\\AndroidStudioProjects\\MobilePlayer\\vitamio\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\color\\abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "G:\\TwtProhect\\MobilePlayer\\vitamio\\build\\intermediates\\res\\merged\\release\\color\\abc_secondary_text_material_dark.xml",
+        "source": "G:\\TwtProhect\\MobilePlayer\\vitamio\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\color\\abc_secondary_text_material_dark.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\AndroidStudioProjects\\MobilePlayer\\vitamio\\build\\intermediates\\res\\merged\\release\\color\\switch_thumb_material_dark.xml",

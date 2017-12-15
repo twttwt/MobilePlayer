@@ -1,5 +1,9 @@
 [
     {
+        "merged": "G:\\TwtProhect\\MobilePlayer\\xListView\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\ic_launcher.png",
+        "source": "G:\\TwtProhect\\MobilePlayer\\xListView\\src\\main\\res\\drawable-ldpi\\ic_launcher.png"
+    },
+    {
         "merged": "D:\\AndroidStudioProjects\\AndroidStudioProjects\\MobilePlayer\\xListView\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\ic_launcher.png",
         "source": "D:\\AndroidStudioProjects\\AndroidStudioProjects\\MobilePlayer\\xListView\\src\\main\\res\\drawable-ldpi\\ic_launcher.png"
     }

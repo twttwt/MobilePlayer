@@ -39,6 +39,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import static com.example.twt.mobileplayer.R.id.cancel_action;
 import static com.example.twt.mobileplayer.R.id.videoview;
 
 public class SystemVideoPlayer extends Activity implements View.OnClickListener {
@@ -123,6 +124,9 @@ public class SystemVideoPlayer extends Activity implements View.OnClickListener 
                     mHandler.removeMessages(3);
                     mHandler.sendEmptyMessageDelayed(3, 2000);
                     break;
+                case 4://更新标题
+                    tvName.setText(display_name);
+                    break;
             }
 
         }
@@ -179,6 +183,7 @@ public class SystemVideoPlayer extends Activity implements View.OnClickListener 
     private LinearLayout ll_loading;
     private TextView tv_laoding_netspeed;
     private TextView tv_buffer_netspeed;
+    private String display_name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -699,6 +704,8 @@ public class SystemVideoPlayer extends Activity implements View.OnClickListener 
         MediaItem mediaItem = mMediaItemList.get(mPosition);
         isNetUri = mUtils.isNetUri(mediaItem.getData());
         mVideoView.setVideoPath(mediaItem.getData());
+        tvName.setText(mediaItem.getDisplay_name());
+        mHandler.sendEmptyMessage(4);
     }
 
     /**
@@ -710,6 +717,9 @@ public class SystemVideoPlayer extends Activity implements View.OnClickListener 
         MediaItem mediaItem = mMediaItemList.get(mPosition);
         isNetUri = mUtils.isNetUri(mediaItem.getData());
         mVideoView.setVideoPath(mediaItem.getData());
+        display_name = mediaItem.getDisplay_name();
+        tvName.setText(mediaItem.getDisplay_name());
+        mHandler.sendEmptyMessage(4);
     }
 
     @Override
